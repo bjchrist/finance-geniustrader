@@ -1,80 +1,165 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-	<title>bjchrist/finance-geniustrader @ GitHub</title>
-	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #9c00fc;
-		  font-family: "Helvetica,Arial,FreeSans";
-  		color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #63ff03; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #63ff03; }
-    h3 { text-align: center; color: #63ff03; }
-    a { color: #63ff03; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
-	
-</head>
-
-<body>
-  <a href="http://github.com/bjchrist/finance-geniustrader"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/bjchrist/finance-geniustrader/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/bjchrist/finance-geniustrader/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/bjchrist/finance-geniustrader">finance-geniustrader</a>
-      <span class="small">by <a href="http://github.com/bjchrist">bjchrist</a></span></h1>
-
-    <div class="description">
-      geniustrader svn mirror and my local branches.
-    </div>
-
-    <h2>Authors</h2>
-<p>Chia-liang Kao (clkao@clkao.org)<br/><br/>      </p>
-<h2>Contact</h2>
-<p> (bjarne.christiansen@nokia.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/bjchrist/finance-geniustrader/zipball/master">zip</a> or
-      <a href="http://github.com/bjchrist/finance-geniustrader/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/bjchrist/finance-geniustrader</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/bjchrist/finance-geniustrader">bjchrist/finance-geniustrader</a>
-    </div>
-
-  </div>
-
-  
-</body>
-</html>
+<html> 
+<head> 
+<title>GeniusTrader - tools for building trading systems</title> 
+<meta name="description" content="GeniusTrader is a toolbox
+to create and backtest trading systems."> 
+<meta name="keywords" content="GeniusTrader, trading systems, systematic
+trading, neural networks, genetic algorithm, market, finance,
+open source, free software, perl, linux"> 
+</head> 
+<body bgcolor="#ffffff"> 
+ 
+<div style="float: right; background-color: #eaeaea; border: 1px solid black;"> 
+<ul> 
+<li><a href="/">Home</a></li> 
+<li><a href="/first_use.html">First time tutorial</a></li> 
+<li><a href="/doc/">Documentation</a> 
+    <ul> 
+    <li><a href="/doc/GT/">API</a></li> 
+    <li><a href="/doc/Scripts/">Tools</a></li> 
+    </ul> 
+</li> 
+<li><a href="http://devel.geniustrader.org/">Wiki</a></li> 
+<li><a href="/cgi-bin/viewvc.cgi/trunk/">Browse SVN tree</a></li> 
+<li><a href="/wws/">Mailing List Services</a></li> 
+<li><a href="/faq.html">FAQ</a></li> 
+<li><a href="/screenshots.html">Screenshots</a></li> 
+<li><a href="/links.html">Links</a></li> 
+</div> 
+ 
+ 
+<div align="center"> 
+<img src="gt.jpg" width="338" height="206" ALT="GeniusTrader"> 
+</div> 
+ 
+<h1>Presentation</h1> 
+ 
+<p><b>GeniusTrader</b> aims to be a <b>full featured toolbox to create
+<em>trading systems</em></b>. Powerful systematic trading requires
+several things :
+<ul> 
+<li>many indicators and corresponding signals</li> 
+<li>money management rules
+    <ul> 
+    <li>deciding what is a reasonable amount of money to put on a single trade
+        (to limit the risk associated to that trade)</li> 
+    <li>combining different values within the portfolio
+        (to limit the global risk)</li> 
+    </ul> 
+</li> 
+<li>flexibility to be able to test all combinations with the above items</li> 
+<li>backtesting system with analysis of results</li> 
+</ul> 
+ 
+<p>GeniusTrader already has support of most of this. GeniusTrader consists
+of a bunch of perl modules associated to a few perl scripts. It
+has no graphical user interface since it's absolutely not needed to achieve
+its goals ... 
+ 
+<p>Here's an <a href="examples/report.html">example of a backtest report</a> 
+that GeniusTrader can generate for you (once you created your trading
+system by defining its rules). GeniusTrader can nevertheless generate
+graphics that can be used to help you create your trading system. It can 
+generate fully customized <a href="screenshots.html">graphics</a> and it can 
+also display the evolution of a portfolio during a backtest.  Those
+graphics help a lot to realize the weaknesses of your
+trading systems :
+<ul> 
+<li>big max draw down</li> 
+<li>long period without new high (very frustrating when
+    you're playing with real money)</li> 
+<li>no regular gains (only one very good trade made most of the profits)</li> 
+</ul> 
+ 
+<h1>Going further ...</h1> 
+ 
+<p>What you read looked interesting and you want to try ? Okay, that's why it's free software.
+However let me warn you : GeniusTrader is not meant to be used by typical end-users, you
+should really know a bit of Perl and if you want to use it, you'll have to understand how
+it works (by reading the docs and the API). That said, we can help you in that direction...
+you'll find everything needed below.
+ 
+<h2>Obtaining source code</h2> 
+ 
+<p>The code is managed via <a href="http://subversion.tigris.org">Subversion</a>. 
+You can always download tarballs (generated on the fly):
+<ul> 
+<li>Development tree
+<ul> 
+<li><a href="http://www.geniustrader.org/cgi-bin/viewvc.cgi/trunk/GT.tar.gz?view=tar">Perl modules</a></li> 
+<li><a href="http://www.geniustrader.org/cgi-bin/viewvc.cgi/trunk/Scripts.tar.gz?view=tar">Perl scripts</a></li> 
+</ul> 
+</li> 
+<li>Stable tree: there's no stable tree, use the development one, it's
+working fine.
+</li> 
+</ul> 
+ 
+<p>The subversion repository is available via anonymous access:
+<pre> 
+$ svn co https://devel.geniustrader.org:8082/svn/trunk/GT
+$ svn co https://devel.geniustrader.org:8082/svn/trunk/Scripts
+</pre> 
+<p>You can also <a href="/cgi-bin/viewvc.cgi/trunk/">browse the subversion tree online</a>. You can use the code
+under the terms of the <a href="http://www.gnu.org/licenses/gpl.html">General Public License</a> 
+(version 2 or, at your option, any later version).
+<p> 
+Once you have the code you still have to go through some steps to have
+a working installation to play with. <a href="first_use.html">Follow the
+instructions</a>.
+ 
+<h2>Status</h2> 
+ 
+<p>GeniusTrader is already usable but it still evolves at a rapid pace with
+regular changes resulting in breakage in other parts of the code. Contributions
+are always welcome because we always have more ideas than time to
+implement them. :-)
+ 
+<h2>Mailing lists</h2> 
+ 
+<p>Beware: I added spaces in the emails below to avoid a bit of spam.</p> 
+ 
+<p>The coordination of the development happens on a mailing list
+(devel &#64; geniustrader.org). You're invited to join and to participate in the
+discussions. Just send "subscribe devel your&#64;email" to
+<a href="mailto:sympa &#64; geniustrader.org">sympa &#64; geniustrader.org</a>. That's where
+you submit patches and ideas for improving GeniusTrader. Also you can
+probably find some help over there (in particular if you want to
+contribute later)...</p> 
+ 
+<p>If you're not interested in the development of GeniusTrader but
+you have a strong interest in systematic trading, then you're
+welcome to join system-traders &#64; geniustrader.org where you can
+exchange your ideas and research with other people. To subscribe
+to it, please send "subscribe system-traders your&#64;email" to
+<a href="mailto:sympa &#64; geniustrader.org">sympa &#64; geniustrader.org</a>.</p> 
+ 
+<p>Both lists are archived on the web:
+<ul> 
+<li><a href="http://www.geniustrader.org/lists/devel/">devel &#64; geniustrader.org</a> (<a href="http://www.geniustrader.org/lists/devel/index2.html">same without SVN commit notices</a>)</li> 
+<li><a href="http://www.geniustrader.org/lists/system-traders/">system-traders &#64; geniustrader.org</a></li> 
+</ul> 
+ 
+<h2>GeniusTrader internals</h2> 
+ 
+<p>There is no good documentation giving an overview of GeniusTrader internals.
+However each object is documented in the source code (with POD) and you can browse
+the <a href="doc/GT/">API</a> to learn more about it. In order to help you have
+a global view of GeniusTrader before digging into it, you can watch this schema:
+<p align="center"> 
+<img src="gt-internals.png" alt="Gross overview of GeniusTrader architecture" width="700" height="367"> 
+<p> 
+You should also know that each customizable object has access to
+various informations including many indicators, signals and whatever
+can be computed with history of prices and volume (and possibly some
+external meta-data information). Keep in mind that this representation
+of GeniusTrader's architecture is incomplete and is not always 100%
+accurate (some simplifications have been made), but it gives you a good
+overview of how things are working together.
+ 
+<p>Have fun, we hope to see you soon, we'd enjoy your contribution !
+ 
+<hr /> 
+Copyright 2000-2005 Raphaël Hertzog &amp; Fabien Fulhaber
+</body> 
+</html> 
